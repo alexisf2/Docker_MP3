@@ -11,7 +11,7 @@ COPY sources.list /etc/apt/sources.list
 
 # Update apt, and install Java + curl + wget on your ubuntu image.
 RUN \
-  apt-get update && \
+  apt-get update && apt-transport-https \
   apt-get install -y curl vim wget maven expect git zip unzip libboost-dev libboost-test-dev libboost-program-options-dev libboost-filesystem-dev libboost-thread-dev libevent-dev automake libtool flex bison pkg-config g++ libssl-dev telnet net-tools && \
   apt-get install -y openjdk-8-jdk 
 
